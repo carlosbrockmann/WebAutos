@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
 import { GlobalConstants, CARS } from '../../../global-constants';
 
@@ -7,10 +8,27 @@ import { GlobalConstants, CARS } from '../../../global-constants';
   styleUrls: ['./autodetails.component.css'],
 })
 export class AutodetailsComponent implements OnInit {
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  @Input()
   auto: CARS;
+  viewstate: string = 'details'; 
 
-  ngOnInit() {}
+  private selectedId: number = 0;
+
+  ngOnInit() {
+    var selID: string = this.route.snapshot.paramMap.get('ID');
+    if (selID && !isNaN(selID as any)) this.selectedId = parseInt(selID);
+
+    var autos = GlobalConstants.CarList.filter((c) => c.ID == this.selectedId);
+    if (autos.length > 0) this.auto = autos[0];
+
+    let view = this.route.snapshot.queryParamMap.get('viewstate') || 'details';
+    if (view == 'edit') {
+      this.viewstate = 'edit';
+    } else {
+      this.viewstate = 'details';
+    } 
+
+
+  }
 }

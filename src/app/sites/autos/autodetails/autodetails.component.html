@@ -1,0 +1,42 @@
+<h3>Autodetails</h3>
+
+<p *ngIf="!auto"><em>Loading...</em></p>
+
+<div id="autodetails">
+  <table *ngIf="auto" class="table table-striped" id="autoliste">
+    <tbody>
+      <tr>
+        <th>ID</th>
+        <td>{{ auto.ID }}</td>
+      </tr>
+      <tr>
+        <th>Marke</th>
+        <td>{{ auto.ID }}</td>
+      </tr>
+      <tr>
+        <th>Modell</th>
+        <td [innerHTML]="auto.Modell"></td>
+      </tr>
+      <tr>
+        <th>Fahrgestellnummer</th>
+        <td>{{ auto.Fahrgestellnummer }}</td>
+      </tr>
+      <tr>
+        <th>KundenID</th>
+        <td>{{ auto.KundenID }}</td>
+      </tr>
+      <tr>
+        <th>HaendlerID</th>
+        <td>{{ auto.HaendlerID }}</td>
+      </tr>
+      <tr>
+        <th>Erstzulassung</th>
+        <td>{{ auto.Erstzulassung }}</td>
+      </tr>
+      <tr>
+        <th>ErstKennzeichen</th>
+        <td>{{ auto.ErstKennzeichen }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

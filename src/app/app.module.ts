@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HaendlerComponent } from './sites/haendler/haendler.component';
 import { PersonComponent } from './sites/person/person.component';
 import { AutosComponent } from './sites/autos/autos.component';
+import { AutodetailsComponent } from './sites/autos/autodetails/autodetails.component';
 import { HomeComponent } from './sites/home/home.component';
 import { CARS, GlobalConstants } from './global-constants';
 import meineAutos from './data/autos.json';
@@ -29,6 +30,7 @@ import meineAutos from './data/autos.json';
     PersonComponent,
     HomeComponent,
     AutosComponent,
+    AutodetailsComponent,
   ],
   bootstrap: [AppComponent],
 })

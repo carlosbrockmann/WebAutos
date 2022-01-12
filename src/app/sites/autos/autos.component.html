@@ -23,13 +23,13 @@
       <td [innerHTML]="auto.Modell"></td>
       <td nowrap>
         <a
-          routerLink="autos/{{ auto.ID }}"
+          routerLink="../autos/{{ auto.ID }}"
           [queryParams]="{ viewstate: 'details' }"
           >Details</a
         >
         &nbsp;&nbsp;
         <a
-          routerLink="autos/{{ auto.ID }}"
+          routerLink="../autos/{{ auto.ID }}"
           [queryParams]="{ viewstate: 'edit' }"
           >Edit</a
         >
