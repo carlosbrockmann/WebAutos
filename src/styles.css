@@ -1,1 +1,5 @@
 /* Add application styles & imports to this file! */
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+}
