@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HaendlerComponent } from './sites/haendler/haendler.component';
 import { AutosComponent } from './sites/autos/autos.component';
 import { PersonComponent } from './sites/person/person.component';
+import { HomeComponent } from './sites/home/home.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { PersonComponent } from './sites/person/person.component';
     HaendlerComponent,
     AutosComponent,
     PersonComponent,
+    HomeComponent,
   ],
   bootstrap: [AppComponent],
 })
