@@ -11,7 +11,8 @@ export class AutodetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   auto: CARS;
-  viewstate: string = 'details'; 
+  viewstate: string = 'details';
+  editmodus: boolean = false;
 
   private selectedId: number = 0;
 
@@ -25,10 +26,20 @@ export class AutodetailsComponent implements OnInit {
     let view = this.route.snapshot.queryParamMap.get('viewstate') || 'details';
     if (view == 'edit') {
       this.viewstate = 'edit';
+      this.editmodus = true;
     } else {
       this.viewstate = 'details';
-    } 
+      this.editmodus = false;
+    }
+  }
 
-
+  toggleViewState(): void {
+    if (this.editmodus) {
+      this.viewstate = 'details';
+      this.editmodus = false;
+    } else {
+      this.viewstate = 'edit';
+      this.editmodus = true;
+    }
   }
 }
