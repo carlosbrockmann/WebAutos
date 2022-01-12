@@ -5,5 +5,6 @@ import { AutosComponent } from './autos.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [AutosComponent],
+  bootstrap: [AutosComponent],
 })
 export class AutosModule {}
