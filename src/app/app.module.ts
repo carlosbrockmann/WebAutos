@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { NgxNavbarModule } from 'ngx-bootstrap-navbar';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
 import { MenuComponent } from './menu/menu.component';
 import { HaendlerComponent } from './sites/haendler/haendler.component';
 import { AutosComponent } from './sites/autos/autos.component';
@@ -20,7 +19,6 @@ import { PersonComponent } from './sites/person/person.component';
   ],
   declarations: [
     AppComponent,
-    HelloComponent,
     MenuComponent,
     HaendlerComponent,
     AutosComponent,
