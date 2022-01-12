@@ -11,6 +11,8 @@ import { HaendlerComponent } from './sites/haendler/haendler.component';
 import { PersonComponent } from './sites/person/person.component';
 import { AutosComponent } from './sites/autos/autos.component';
 import { HomeComponent } from './sites/home/home.component';
+import { CARS, GlobalConstants } from './global-constants';
+import meineAutos from './data/autos.json';
 
 @NgModule({
   imports: [
@@ -30,4 +32,9 @@ import { HomeComponent } from './sites/home/home.component';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor() {
+    GlobalConstants.CarList = meineAutos;
+    // console.log(GlobalConstants.CarList);
+  }
+}

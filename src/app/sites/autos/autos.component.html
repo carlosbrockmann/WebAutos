@@ -1,1 +1,38 @@
-auto works!
+<h3>Autos</h3>
+<p *ngIf="!autoListe"><em>Loading...</em></p>
+
+<table
+  class="table table-striped"
+  aria-labelledby="tableLabel"
+  *ngIf="autoListe"
+>
+  <thead>
+    <tr>
+      <th nowrap="nowrap">ID</th>
+      <th>Marke</th>
+      <th>Modell</th>
+      <th><br /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let auto of autoListe">
+      <td>{{ auto.ID }}</td>
+      <td>{{ auto.Marke }}</td>
+      <td [innerHTML]="auto.Modell"></td>
+      <td nowrap>
+        <a
+          routerLink="customer/{{ auto.ID }}"
+          [queryParams]="{ viewstate: 'details' }"
+          >Details</a
+        >
+        &nbsp;&nbsp;
+        <a
+          routerLink="customer/{{ auto.ID }}"
+          [queryParams]="{ viewstate: 'edit' }"
+          >Edit</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br /><br />
