@@ -4,17 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './sites/home/home.component';
 import { HaendlerComponent } from './sites/haendler/haendler.component';
 import { PersonComponent } from './sites/person/person.component';
+import { AutosComponent } from './sites/autos/autos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'haendler', component: HaendlerComponent },
   { path: 'person', component: PersonComponent },
-  {
-    path: 'autos',
-    loadChildren: () =>
-      import('./sites/autos/autos.module').then((m) => m.AutosModule),
-  },
+  { path: 'autos', component: AutosComponent },
 ];
 
 @NgModule({
