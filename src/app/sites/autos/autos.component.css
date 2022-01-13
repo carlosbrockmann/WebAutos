@@ -2,3 +2,7 @@
   margin-left: 5% !important;
   width: 90% !important;
 }
+
+.markenCombobox {
+  max-width: 300px;
+}
