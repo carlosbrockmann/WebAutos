@@ -13,7 +13,10 @@ import { AutosComponent } from './sites/autos/autos.component';
 import { AutodetailsComponent } from './sites/autos/autodetails/autodetails.component';
 import { HomeComponent } from './sites/home/home.component';
 import { CARS, GlobalConstants } from './global-constants';
-import meineAutos from './data/autos.json';
+
+declare var require: any;
+
+var myCars: CARS[] = require('./data/autos.json');
 
 @NgModule({
   imports: [
@@ -36,7 +39,7 @@ import meineAutos from './data/autos.json';
 })
 export class AppModule {
   constructor() {
-    GlobalConstants.CarList = meineAutos;
+    GlobalConstants.CarList = myCars;
     // console.log(GlobalConstants.CarList);
   }
 }
