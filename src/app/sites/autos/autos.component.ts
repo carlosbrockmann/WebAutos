@@ -6,29 +6,31 @@ import { GlobalConstants, CARS } from '../../global-constants';
   templateUrl: './autos.component.html',
   styleUrls: ['./autos.component.css'],
 })
-
-static automarken: string[];
-
 export class AutosComponent implements OnInit {
   autoListe: CARS[];
-  
+  automarken: string[];
 
   constructor() {
     this.autoListe = GlobalConstants.CarList;
 
-    const marken = []; 
+    const marken = [];
 
     if (this.autoListe) {
-      
-      // this.autoListe.forEach(function (obj, i) {
-      //   if (obj.Marke && marken.indexOf(obj.Marke) < 0)
-      //   marken.push(obj.Marke);
-      // });
-      //   this.autoListe.forEach(function (v) {
-      //     if (!this.automarken.icludes(v.Marke)) this.automarken.push(v.Marke);
-      //   });
+      for (let i = 0; i < this.autoListe.length; i++) {
+        if (marken.indexOf(this.autoListe[i].Marke) < 0)
+          marken.push(this.autoListe[i].Marke);
+      }
+      this.automarken = marken.sort();
     }
   }
 
   ngOnInit() {}
+
+  onAutoMarkenSelect(val: string) {
+    if (val == '') {
+      this.autoListe = GlobalConstants.CarList;
+    } else {
+      this.autoListe = GlobalConstants.CarList.filter((a) => a.Marke == val);
+    }
+  }
 }

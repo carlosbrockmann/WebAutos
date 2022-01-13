@@ -1,4 +1,18 @@
-<h3>Autos</h3>
+<div class="row">
+  <div class="col"><h3>Autos</h3></div>
+  <div class="col">
+    <select
+      #automarke
+      class="form-select"
+      (change)="onAutoMarkenSelect(automarke.value)"
+    >
+      <option value="">Bitte eine Marke auswählen</option>
+      <option *ngFor="let marke of automarken" value="{{ marke }}">
+        {{ marke }}
+      </option>
+    </select>
+  </div>
+</div>
 
 <p *ngIf="!autoListe"><em>Loading...</em></p>
 
