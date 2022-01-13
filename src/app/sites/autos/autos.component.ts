@@ -9,6 +9,7 @@ import { GlobalConstants, CARS } from '../../global-constants';
 export class AutosComponent implements OnInit {
   autoListe: CARS[];
   automarken: string[];
+  firstLabel = 'Nach Marke filtern';
 
   constructor() {
     this.autoListe = GlobalConstants.CarList;
@@ -29,8 +30,10 @@ export class AutosComponent implements OnInit {
   onAutoMarkenSelect(val: string) {
     if (val == '') {
       this.autoListe = GlobalConstants.CarList;
+      this.firstLabel = 'Nach Marke filtern';
     } else {
       this.autoListe = GlobalConstants.CarList.filter((a) => a.Marke == val);
+      this.firstLabel = 'Alle anzeigen';
     }
   }
 }

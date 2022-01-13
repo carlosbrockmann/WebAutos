@@ -6,7 +6,7 @@
       class="form-select markenCombobox"
       (change)="onAutoMarkenSelect(automarke.value)"
     >
-      <option value="">Nach Marke filtern</option>
+      <option value="">{{ firstLabel }}</option>
       <option *ngFor="let marke of automarken" value="{{ marke }}">
         {{ marke }}
       </option>
